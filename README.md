@@ -1,6 +1,6 @@
-# Lara-cms-template
+# GreenLegacy
 
-Laravel filament dashboard template application for all dashboard management.
+Green legacy world
 
 ## Features established at the moment
 
