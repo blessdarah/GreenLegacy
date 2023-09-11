@@ -14,7 +14,7 @@
 
 <body class="font-sans text-gray-900 antialiased">
     @include('partials.navbar')
-
+    {{ $slot }}
     @include('partials.footer')
     @include('partials.footer-scripts')
 </body>

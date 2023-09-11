@@ -1,28 +1,47 @@
 <x-guest-layout>
-<div class="bg-gray-100 w-full py-32 px-20 lg:px-48"
-    style="background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdeerheadinn.com%2Fwp-content%2Fuploads%2F2013%2F08%2Fblog-bg1.jpg&f=1&nofb=1&ipt=c788569957223c470afca088a974f5c5410d13d130e86f7f0a65f811bfd1c79e&ipo=images')">
-    <h3 class="text-white text-6xl font-bold flex items-center"><span class="inline-block w-10 h-1 bg-white mr-3"></span>Blog</h3>
-    <p class="text-white my-3 font-semibold">We keep updating everyday</p>
-</div>
+    <x-page-header title="Our blog" />
+    <section class="blog-area pt-130 pb-100">
+        <div class="container">
+            <div class="row">
+                @foreach ($posts as $post)
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2  animated" data-wow-delay=".1s"
+                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
+                        <div class="blogs mb-30">
+                            <div class="blogs__thumb pos-rel mb-45">
+                                <div class="blogs__thumb--img">
+                                    <img src="{{ $post->image }}" alt="blog post image">
+                                </div>
+                                <a class="blog-tag" href="blog-details.html">{{ $post->category->name }}</a>
+                            </div>
+                            <div class="blogs__content">
+                                <div class="blogs__content--meta mb-15">
+                                    <span><i class="far fa-calendar-alt"></i>
+                                        {{ $post->created_at->format('d M Y') }}</span>
+                                    {{-- <span><i class="far fa-comment"></i> Comment (03)</span> --}}
+                                </div>
+                                <h4 class="mb-4"><a href="{{ $post->postUrl() }}">{{ $post->title }}</a></h4>
+                                <p class="mb-10">{{ Str::words($post->summary, 30) }}</p>
+                                <ul class="project-manager">
+                                    {{-- <li><a href="#"><img src="{{ asset('assets/img/blog/04.png') }}" --}}
+                                    {{--             alt=""> --}}
+                                    {{--         <span>David Zon</span></a></li> --}}
+                                    {{-- <li> --}}
+                                    <a class="more_btn_02" href="{{ $post->postUrl() }}">Read more <i
+                                            class="far fa-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
-<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-  <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-    @foreach($posts as $post)
-    <div class="overflow-hidden transition-shadow duration-300 bg-white rounded">
-      <a href="{{$post->postUrl()}}" aria-label="Article"><img src="{{asset('storage/' . $post->image)}}" class="object-cover w-full h-64 rounded" alt="" /></a>
-      <div class="py-5">
-        <p class="mb-2 text-xs font-semibold text-gray-600 uppercase">
-          {{$post->created_at->format('d M, Y')}}
-        </p>
-        <a href="{{$post->postUrl()}}" aria-label="Article" class="inline-block mb-3 text-black transition-colors duration-200 hover:text-green-500"><p class="text-2xl font-bold leading-5">{{$post->title}}</p></a>
-        <p class="mb-4 text-gray-700">{{Str::words($post->summary, 10)}}</p>
-      </div>
+    {{-- old blog --}}
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div>
+            {{ $posts->links() }}
+        </div>
     </div>
-    @endforeach
-  </div>
-    <div>
-        {{$posts->links()}}
-    </div>
-</div>
 </x-guest-layout>
-

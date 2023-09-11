@@ -36,18 +36,3 @@ php artisan shield:super-admin
 php artisan shield:generate
 ```
 
-### Nice to have packages for filament
-
--   [ ] Icon picker package [Filament icon picker](https://filamentphp.com/plugins/icon-picker)
--   [ ] Import files into tables [Filament import](https://filamentphp.com/plugins/import)
--   [ ] Editor Js integration [Filament editor Js](https://filamentphp.com/plugins/editorjs)
--   [ ] Excel export integration [Filament export](https://filamentphp.com/plugins/pxlrbt-excel)
-
-*   Comment
-    -   author_name
-    -   author_email
-    -   comment
-    -   commentable_type
-    -   commentable_id
-
--   [ ] [Another excel export](https://filamentphp.com/plugins/alperenersoy-export)

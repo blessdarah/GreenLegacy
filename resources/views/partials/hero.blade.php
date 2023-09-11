@@ -16,15 +16,19 @@
                                         <span>Better Future.</span>
                                     </h1>
                                     <ul class="btn-list">
-                                        <li><a class="theme_btn theme_btn_bg" href="about.html"
+                                        <li>
+                                            <a class="theme_btn theme_btn_bg" href="about.html"
                                                 data-animation="fadeInLeft" data-delay=".5s"
                                                 style="animation-delay: 0.5s;" tabindex="0">explore more <i
-                                                    class="far fa-arrow-right"></i></a>
+                                                    class="far fa-arrow-right"></i>
+                                            </a>
                                         </li>
-                                        <li><a class="theme_btn theme-border-btn" href="contact.html"
+                                        <li>
+                                            <a class="theme_btn theme-border-btn" href="contact.html"
                                                 data-animation="fadeInLeft" data-delay=".5s"
                                                 style="animation-delay: 0.5s;" tabindex="0">donate now <i
-                                                    class="far fa-arrow-right"></i></a>
+                                                    class="far fa-arrow-right"></i>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -33,7 +37,7 @@
                     </div>
                 </div>
                 <div class="single-slider slider-height pos-rel d-flex align-items-center slick-slide"
-                    style="background-image: url(&quot;assets/img/slider/slider2.jpg&quot;); width: 1836px; position: relative; left: -1836px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms linear 0s;"
+                    style="background-image: url(&quot;{{ asset('assets/img/slider/slider2.jpg') }}&quot;); width: 1836px; position: relative; left: -1836px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms linear 0s;"
                     data-slick-index="1" aria-hidden="true" tabindex="-1">
                     <div class="container">
                         <div class="row">
@@ -68,5 +72,3 @@
                 class="far fa-chevron-right"></i></button>
     </div>
 </div>
-
-<h3>This is a test</h3>
