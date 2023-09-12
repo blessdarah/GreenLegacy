@@ -1,53 +1,80 @@
 <x-guest-layout>
+    <x-page-header title="Our projects" />
 
-<div class="bg-gray-100 w-full py-32 px-20 lg:px-48"
-    style="background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.markhamnotary.com%2Fwp-content%2Fuploads%2F2015%2F11%2Fsection-project-bg.jpg&f=1&nofb=1&ipt=286a819b72e506dff82c9990d612b80e13f84b8848f4dfd5ab79a3aff6c79501&ipo=images')">
-    <h3 class="text-white text-6xl font-bold flex items-center"><span class="inline-block w-10 h-1 bg-white mr-3"></span>Our services</h3>
-    <p class="text-white my-3 font-semibold">We keep updating everyday</p>
-</div>
-
-
-<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-  <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl">
-    <div>
-      <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-orange-900 uppercase rounded-full bg-orange-400">Our projects</p>
-    </div>
-    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-      <span class="relative inline-block">
-        <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-green-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
-          <defs>
-            <pattern id="2feffae2-9edf-414e-ab8c-f0e6396a0fc1" x="0" y="0" width=".135" height=".30">
-              <circle cx="1" cy="1" r=".7"></circle>
-            </pattern>
-          </defs>
-          <rect fill="url(#2feffae2-9edf-414e-ab8c-f0e6396a0fc1)" width="52" height="24"></rect>
-        </svg>
-        <span class="relative">Our</span>
-      </span>
-      latest projects
-    </h2>
-    <p class="text-base text-gray-700 md:text-lg">All the set of projects we are currently working on right now</p>
-  </div>
-</div>
-
-{{-- services --}}
-<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-  <div class="grid gap-8 row-gap-5 mb-8 lg:grid-cols-3 lg:row-gap-8">
-    @foreach($projects as $project)
-    <div>
-      <img class="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80" src="{{asset('storage/'. $project->image)}}" alt="" />
-      <a href="{{$project->projectUrl()}}" class="mb-2 text-xl font-bold leading-none sm:text-2xl">
-        {{$project->name}}
-      </a>
-      <p class="text-gray-700">
-        {{$project->summary}}
-      </p>
-    </div>
-    @endforeach
-  </div>
-{{-- Pagination --}}
-    <div>{{$projects->links()}}</div>
-</div>
-
-
+    <section class="project-01-area pt-125 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="section-title text-center mb-85 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <h6 class="left-line pl-75 pr-75">Popular Project</h6>
+                        <h2>We’ve Done Many Crowd <br>
+                            <span>Founding Project</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($projects as $project)
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="projects projects-02 white-bg mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <div class="projects__thumb pos-rel">
+                                <img src="{{ $project->image }}" alt="">
+                                <a href="project-video.html" class="new-tag">new</a>
+                            </div>
+                            <div class="projects__content">
+                                <h4><a href="{{ $project->projectUrl() }}">{{ $project->name }}</a></h4>
+                                <div class="skill mb-30">
+                                    <p>Raised <span>$2535</span></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="95"
+                                            aria-valuemin="0" aria-valuemax="95">
+                                            <h5>95%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="projects__content--manager">
+                                    <ul class="project-manager">
+                                        <li>
+                                            <a href="#">
+                                                <img src="../../../../devsnews.com/template/fande/fande/assets/img/project/01.png/index.html"
+                                                    alt="">
+                                                <span>{{ $project->status === '1' ? 'Completed' : 'Active' }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <p class="time"><i class="far fa-clock"></i>
+                                                Ends: {{ $project->end_date->format('d M, Y') }}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!--project-area end-->
+    <!--cta-area start-->
+    <section class="cta-area theme-bg pt-55 pb-25">
+        <div class="container">
+            <div class="row align-items-md-center">
+                <div class="col-xl-9 col-lg-9 col-md-8">
+                    <div class="cta-wrapper wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="section-title mb-30">
+                            <h2>Become Our <b>Premium</b> Partner ?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4">
+                    <div class="cta-wrapper wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="cta-btn text-left text-md-right">
+                            <a class="theme_btn theme_btn_bg" href="contact.html">contact us <i
+                                    class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-guest-layout>

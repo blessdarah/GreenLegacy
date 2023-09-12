@@ -48,6 +48,7 @@
                         <p class="mb-30">Sed ut perspi ciatis unde omnis iste
                             natus error sit voluptatem accusantiu doloremque laudantiu totam</p>
                         <div class="subscribe-content foter-subscribe">
+
                             <form class="subscribe-form"
                                 action="https://www.devsnews.com/template/fande/fande/form.php">
                                 <input class="form-control" type="text" placeholder="Enter Your Email">
