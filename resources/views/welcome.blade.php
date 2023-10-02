@@ -1,6 +1,7 @@
 <x-guest-layout>
-    @include('partials.hero')
     <main>
+        @include('partials.hero')
+
         <section class="about-us-area about-area-02 pt-130 pb-100">
             <div class="container">
                 <div class="row">
@@ -60,6 +61,53 @@
                             </div>
                             <a class="theme_btn theme_btn_bg" href="about.html" data-animation="fadeInUp2"
                                 data-delay=".1s">explore more <i class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-area heding-bg pos-rel pt-130 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="faq-wrapper mb-30">
+                            <div class="section-title white-title text-left mb-85 wow fadeInUp2  animated"
+                                data-wow-delay=".1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
+                                <h6 class="left-line pl-75 pr-75">Faq</h6>
+                                <h2>Frequently Asked Questions</h2>
+                                <p>We have all your questions answered so you don't have to keep contacting us.</p>
+                                <a class="theme_btn theme_btn_bg" href="{{ route('pages.contact') }}">contact us <i
+                                        class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="faq-content mb-30 wow fadeInUp2  animated" data-wow-delay=".1s"
+                            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;">
+                            <div id="accordion">
+                                @foreach ($faqs as $faq)
+                                    <div class="card card-bg mb-15" style="background-image:url(assets/img/bg/06.jpg)">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse"
+                                                    data-target="#collapse{{ $loop->index }}" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    {{ $faq->question }}
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapse{{ $loop->index }}" class="collapse show"
+                                            aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <p>{{ $faq->response }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

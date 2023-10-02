@@ -1,6 +1,8 @@
 <div class="slider-area pos-rel">
-    <div class="slider-active slick-initialized slick-slider"><button type="button" class="slick-prev slick-arrow"
-            style="display: block;"><i class="far fa-chevron-left"></i></button>
+    <div class="slider-active slick-initialized slick-slider">
+        <button type="button" class="slick-prev slick-arrow" style="display: block;">
+            <i class="far fa-chevron-left"></i>
+        </button>
         <div class="slick-list draggable">
             <div class="slick-track" style="opacity: 1; width: 3672px;">
                 <div class="single-slider slider-height pos-rel d-flex align-items-center slick-slide slick-current slick-active"
@@ -10,21 +12,21 @@
                         <div class="row">
                             <div class="col-xl-7">
                                 <div class="slider__content text-left">
-                                    <span class="sub-title left-line pl-80 mb-35">Crowd Founding </span>
+                                    <span class="sub-title left-line pl-80 mb-35">Tree planting</span>
                                     <h1 class="main-title mb-35" data-animation="fadeInUp2" data-delay=".2s"
                                         style="animation-delay: 0.2s;">Change World
                                         <span>Better Future.</span>
                                     </h1>
                                     <ul class="btn-list">
                                         <li>
-                                            <a class="theme_btn theme_btn_bg" href="about.html"
+                                            <a class="theme_btn theme_btn_bg" href="{{ route('pages.about') }}"
                                                 data-animation="fadeInLeft" data-delay=".5s"
                                                 style="animation-delay: 0.5s;" tabindex="0">explore more <i
                                                     class="far fa-arrow-right"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="theme_btn theme-border-btn" href="contact.html"
+                                            <a class="theme_btn theme-border-btn" href="{{ route('pages.donate') }}"
                                                 data-animation="fadeInLeft" data-delay=".5s"
                                                 style="animation-delay: 0.5s;" tabindex="0">donate now <i
                                                     class="far fa-arrow-right"></i>
