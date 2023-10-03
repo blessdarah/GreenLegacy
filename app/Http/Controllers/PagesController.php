@@ -33,7 +33,7 @@ class PagesController extends Controller
             "posts" => Post::all()->take(4),
             "events" => Event::all()->take(4),
             "updates" => Update::all()->take(8),
-            "faqs" => Faq::all()
+            "faqs" => Faq::all()->take(6)
             // "banners" => Banner::where('is_active', true)->get()
         ]);
     }
